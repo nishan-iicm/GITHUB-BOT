@@ -1,1 +1,18 @@
-{"date":"2021-01-03T11:09:19+05:30"}
+ npm init  
+ npm i jsonfile  
+ npm i moment    
+npm i simple-git
+const jsonfile = require('jsonfile');
+const moment  = require('moment');
+const simpleGit = require('simple-git');
+const FILE_PATH = "./code.txt"
+
+const DATE = moment().subtract(1,'months').add(1,'year').add(2,'days').format();
+
+const data = {
+    date:DATE
+}
+
+jsonfile.writeFile(FILE_PATH,data);
+
+simpleGit().add([FILE_PATH]).commit(DATE,{'--date':DATE}).push();
