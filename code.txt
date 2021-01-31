@@ -1,3 +1,5 @@
+ git clone ssh/http of the repository
+ code .
  npm init  
  npm i jsonfile  
  npm i moment    
